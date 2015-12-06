@@ -1,5 +1,6 @@
 # Project-specific variables
 BINARIES ?=	hello
+CONVEY_PORT ?=	9042
 
 
 # Common variables
@@ -40,3 +41,18 @@ clean:
 
 .PHONY: re
 re:	clean all
+
+
+.PHONY: convey
+convey:
+	$(GO) get github.com/smartystreets/goconvey
+	goconvey -cover -port=$(CONVEY_PORT) -workDir="$(realpath .)" -depth=1
+
+
+.PHONY:	cover
+cover:	profile.out
+
+
+profile.out:	$(SOURCES)
+	rm -f $@
+	$(GO) test -covermode=count -coverpkg=. -coverprofile=$@ .
