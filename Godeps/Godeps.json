@@ -1,0 +1,29 @@
+{
+	"ImportPath": "github.com/moul/golang-boilerplate",
+	"GoVersion": "go1.5.1",
+	"Packages": [
+		"github.com/moul/golang-boilerplate",
+		"github.com/moul/golang-boilerplate/cmd/hello"
+	],
+	"Deps": [
+		{
+			"ImportPath": "github.com/Sirupsen/logrus",
+			"Comment": "v0.8.6-13-g84b968c",
+			"Rev": "84b968cb9f82d727044973f8255489bbe15e9948"
+		},
+		{
+			"ImportPath": "github.com/jtolds/gls",
+			"Rev": "9a4a02dbe491bef4bab3c24fd9f3087d6c4c6690"
+		},
+		{
+			"ImportPath": "github.com/smartystreets/assertions",
+			"Comment": "1.5.0-405-g01fedaa",
+			"Rev": "01fedaa993c0a9f9aa55111501cd7c81a49e812e"
+		},
+		{
+			"ImportPath": "github.com/smartystreets/goconvey/convey",
+			"Comment": "1.5.0-453-g5bb9e11",
+			"Rev": "5bb9e117a1a4f1a1555a4d41cd233c79b1a5209f"
+		}
+	]
+}
