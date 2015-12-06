@@ -1,9 +1,11 @@
 # Project-specific variables
-COMMANDS ?=	hello
+BINARIES ?=	hello
 
 
 # Common variables
 SOURCES :=	$(shell find . -name "*.go")
+COMMANDS :=	$(shell go list ./... | grep -v /vendor/ | grep /cmd/)
+PACKAGES :=	$(shell go list ./... | grep -v /vendor/ | grep -v /cmd/)
 GOENV ?=	GO15VENDOREXPERIMENT=1
 GO ?=		$(GOENV) go
 GODEP ?=	$(GOENV) godep
@@ -13,10 +15,10 @@ all:	build
 
 
 .PHONY: build
-build:	$(COMMANDS)
+build:	$(BINARIES)
 
 
-$(COMMANDS):	$(SOURCES)
+$(BINARIES):	$(SOURCES)
 	$(GO) build -o $@ ./cmd/$@
 
 
@@ -24,3 +26,8 @@ $(COMMANDS):	$(SOURCES)
 test:
 	$(GO) get -t .
 	$(GO) test -v .
+
+
+.PHONY: godep-save
+godep-save:
+	$(GODEP) save $(PACKAGES) $(COMMANDS)
