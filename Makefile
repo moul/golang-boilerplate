@@ -31,3 +31,12 @@ test:
 .PHONY: godep-save
 godep-save:
 	$(GODEP) save $(PACKAGES) $(COMMANDS)
+
+
+.PHONY: clean
+clean:
+	rm -f $(BINARIES)
+
+
+.PHONY: re
+re:	clean all
