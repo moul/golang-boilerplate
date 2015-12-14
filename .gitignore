@@ -4,6 +4,11 @@ hello
 # Profile output
 profile.out
 
+# dist
+/dist
+/contrib/docker/entrypoint
+/contrib/docker/linux_386
+
 # Junk files
 *~
 *#
