@@ -19,6 +19,13 @@ Hello world !
 $ go get github.com/moul/golang-boilerplate/cmd/...
 ```
 
+## Run with docker
+
+```console
+$ docker run moul/golang-boilerplate
+Hello world !
+```
+
 ## License
 
 MIT
