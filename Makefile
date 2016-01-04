@@ -4,7 +4,7 @@ CONVEY_PORT ?=	9042
 
 
 # Common variables
-SOURCES :=	$(shell find . -name "*.go")
+SOURCES :=	$(shell find . -type f -name "*.go")
 COMMANDS :=	$(shell go list ./... | grep -v /vendor/ | grep /cmd/)
 PACKAGES :=	$(shell go list ./... | grep -v /vendor/ | grep -v /cmd/)
 GOENV ?=	GO15VENDOREXPERIMENT=1
